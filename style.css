@@ -1,0 +1,531 @@
+html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}figcaption,figure,main{display:block}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}dfn{font-style:italic}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}audio,video{display:inline-block}audio:not([controls]){display:none;height:0}img{border-style:none}svg:not(:root){overflow:hidden}button,input,optgroup,select,textarea{font-family:sans-serif;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}button,html [type=button],[type=reset],[type=submit]{-webkit-appearance:button}button::-moz-focus-inner,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{border-style:none;padding:0}button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{display:inline-block;vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details,menu{display:block}summary{display:list-item}canvas{display:inline-block}template{display:none}[hidden]{display:none}
+
+.clearfix:after {visibility: hidden; display: block; font-size: 0; content: ''; clear: both; height: 0; }
+
+html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+
+*, *:before, *:after {box-sizing: inherit}
+
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+
+
+/* General page styles */
+
+:root {
+  --divider: 1px solid rgba(0,0,0,0.7); 
+  --dragonRed: #e50712;
+}
+
+* {
+ margin: 0;
+ padding: 0; 
+}
+
+html {
+  font-size: 125%;
+  font-family: 'Cinzel', serif;
+  color: rgba(0, 0, 0, 0.82);
+  letter-spacing: 1px;
+}
+
+body {
+  height: 100vh;
+}
+
+main,
+.loading {
+  height: 100%;
+  min-height: 700px;
+  width: 100vw;
+  min-width: 1200px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 150, 50, 0.6);
+  background-image: url(./assets/mitchell-griest-ARBBUlj-6Es-unsplash.jpg);
+  background-size: cover;
+  background-blend-mode: multiply;
+}
+
+h3 {
+  text-transform: capitalize;
+  text-decoration: underline;
+}
+
+li p:nth-child(2) {
+  box-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+  background-color: #eee;
+  padding: 3px;
+  margin-bottom: 2px;
+}
+
+
+/* Character sheet styles */
+
+.characterSheet {
+  background-color: palegoldenrod;
+  background-image: url(./assets/papyrusbackground.jpg);
+  background-size: cover;
+  border: 2px solid #333;
+  border-radius: 150px 100px 230px 45px/10px 225px 70px 400px;
+  box-shadow: 30px 25px 15px #000;
+  height: 700px;
+  width: 1100px;
+  margin-left: 3%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 0;
+}
+
+.characterSheet::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 80% 50%;
+  z-index: 0;
+  opacity: 0.3;
+  filter: blur(2px);
+}
+
+/* Classes for character sheet styling */
+
+.barbarian::after {
+  background-image: url(./icons/barbarian.png);
+}
+
+.bard::after {
+  background-image: url(./icons/bard.png);
+  background-position: 75% 50%;
+}
+
+.cleric::after {
+  background-image: url(./icons/cleric.png);
+  background-position: 82% 50%;
+}
+
+.druid::after {
+  background-image: url(./icons/druid.png);
+  background-position: 80% 50%;
+}
+
+.fighter::after {
+  background-image: url(./icons/fighter.png);
+  background-position: 100% 50%;
+}
+
+.monk::after {
+  background-image: url(./icons/monk.png);
+  background-position: 80% 50%;
+}
+
+.paladin::after {
+  background-image: url(./icons/paladin.png);
+  background-position: 85% 50%;
+}
+
+.ranger::after {
+  background-image: url(./icons/ranger.png);
+  background-position: 84% 50%;
+}
+
+.rogue::after {
+  background-image: url(./icons/rogue.png);
+  background-position: 90% 50%;
+}
+
+.sorcerer::after {
+  background-image: url(./icons/sorcerer.png);
+  background-position: 90% 50%;
+}
+
+.warlock::after {
+  background-image: url(./icons/warlock.png);
+  background-position: 78% 50%;
+}
+
+.wizard::after {
+  background-image: url(./icons/wizard.png);
+  background-position: 80% 50%;
+}
+
+
+
+
+/* Abilities Section */
+
+
+.abilities {
+  border-right: var(--divider);
+  width: 15%;
+  height: 95%;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.abilities .box,
+.box {
+  text-align: center;
+  height: 90px;
+  width: 90px;
+  position: relative;
+}
+
+.abilities .box .stat,
+.box .stat {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.abilities .box .score,
+.box .score {
+  background-color: rgba(110,110,110,0.8);
+  border-radius: 20px 5px 20px 5px;
+  display: inline-block;
+  border: 1px solid black;
+  padding: 8px;
+  font-size: 1.5rem;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  min-width: 52px;
+}
+
+.abilities .box .bonus {
+  background-color: #eee;
+  display: inline-block;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 4px;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+
+/* Skills Section */
+
+.skills {
+  width: 25%;
+  height: 95%;
+  font-size: 0.9rem;
+  text-align: center;
+  border-right: var(--divider);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.skills h3 {
+  margin-top: 1%;
+}
+
+.skills li {
+  display: flex;
+  justify-content: space-between;
+  margin: 6px 40px;
+  border-bottom: var(--divider);
+  font-size: 0.8rem;
+}
+
+
+
+/* Saving Throws */
+
+.savingThrows {
+  width: 22%;
+  height: 40%;
+  margin-bottom: 1.5%;
+  font-size: 0.9rem;
+  text-align: center;
+  border-right: var(--divider);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  left: 40%;
+  bottom: 0;
+}
+
+.savingThrows li {
+  display: flex;
+  justify-content: space-between;
+  margin: 7px 40px;
+  border-bottom: var(--divider);
+  text-transform: uppercase;
+}
+
+
+
+/* Basic Info */
+
+.basicInfo {
+  border-bottom: var(--divider);
+  height: 50%;
+  width: 50%;
+  align-self: flex-start;
+  margin: 17px 5%;
+  padding: 10px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.basicInfo h2 {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-decoration: underline;
+}
+
+.basicInfo p {
+  background-color: rgba(255,255,255,0.4);
+  padding: 5px 10px; 
+}
+
+/* Misc. Info */
+
+.misc {
+  width: 35%;
+  height: 40%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin-bottom: 3%;
+  margin-right: 2%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.misc .box {
+  margin: 20px 10px;
+}
+
+.misc .score {
+  font-size: 2rem;
+  min-width: 60px;
+}
+
+.misc .box:nth-child(3n) {
+  margin-top: 40px;
+}
+
+.misc .box:nth-child(3n) > .score {
+  font-size: 1.2rem;
+}
+
+#profScore {
+  color: darkred;
+}
+
+
+
+.rollAgain  {
+  height: 100vh;
+  width: 15%;
+  margin: 0;
+  padding-left: 2%;
+  border-radius: 300px 0 0 300px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #eee;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.rollAgain p {
+  font-size: 1.4rem;
+  line-height: 1.2;
+  margin: 10%;
+}
+
+.rollAgain .button-container {
+  width: 90%;
+  margin-top: 50%;
+}
+
+
+/* Footer styles */
+
+footer {
+  position: fixed;
+  bottom: 0;
+  z-index: 20;
+}
+
+footer p {
+  margin: 8px 20px;
+  padding: 5px 10px;
+  color: #eee;
+  text-shadow: 2px 2px 2px #111;
+  background-image: linear-gradient(to right, rgba(0,0,0,0.7), transparent, rgba(0,0,0,0.7));
+  border-left: 2px solid var(--dragonRed);
+  border-right: 2px solid var(--dragonRed);
+  border-radius: 10px;
+}
+
+footer a {
+  color: var(--dragonRed);
+}
+
+
+/* Loading screen styles */
+
+.loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  overflow: hidden;
+  justify-content: center;
+}
+
+.loading .d20 {
+  font-size: 12rem;
+  text-shadow: 10px 10px 20px #000;
+  position: absolute;
+}
+
+
+@keyframes diceRoll {
+  0% {transform: rotate(180deg);}
+  100% {transform: rotate(720deg);}
+}
+
+
+/* Overlay styles */
+
+
+.overlay {
+  height: 100vh;
+  min-height: 700px;
+  width: 100vw;
+  min-width: 1200px;
+  background-color: #555;
+  background-image: url(./assets/Yawning_Portal_1280x960_Wallpaper.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 60%;
+  background-blend-mode: multiply;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  z-index: 10;
+}
+
+.logo {
+  width: 70%;
+}
+
+.overlay h1 {
+  margin-top: -5%;
+  font-size: 3rem;
+  text-transform: uppercase;
+  color: #e50712;
+  text-shadow: 1px 1px 1px white, -1px -1px 1px white;
+}
+
+.text-container {
+  margin-top: 0%;
+  width: 60%;
+  color: #eee;
+  text-align: justify;
+  text-shadow: 2px 2px 3px #000;
+}
+
+.text-container h2 {
+  text-align: center;
+  padding: 10px;
+}
+
+.text-container p {
+  margin: 10px 0;
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10%;
+  width: 10%;
+  padding-bottom: 2%;
+  text-align: center;
+}
+
+.roll {
+  appearance: none;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 1.5rem;
+  padding: 20px;
+  cursor: pointer;
+  z-index: 5;
+  font-family: 'Cinzel', serif;
+  color: #eee;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px #111, -1px -1px 2px #111;
+  transition: all 0.4s ease;
+}
+
+.roll:hover,
+.roll:focus {
+  transform: scale(1.1);
+}
+
+.roll:active {
+  transform: scale(0.9);
+  color: #bbb;
+}
+
+.d20 {
+  font-size: 6rem;
+  position: absolute;
+  color: var(--dragonRed);
+}
+
+
+
+
+
+/* Classes for styling and animation */
+
+
+.invisible {
+  display: none;
+}
+
+.proficient {
+  font-weight: 700;
+  color: darkred;
+}
+
+.diceRoll {
+  animation: diceRoll 1.8s ease-out;
+}

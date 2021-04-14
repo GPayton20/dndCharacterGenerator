@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/dbf492a47c.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
+  <title>D&D Character Generator</title>
+</head>
+<body>
+  <main>
+
+    <div class="overlay intro">
+      
+      <img class="logo" src="./assets/DnD_Logo2.png" alt="D&D logo"></img>
+      <h1><span class=sr-only>Dungeons & Dragons</span>Character Generator</h1>
+
+      <div class="text-container">
+        <h2>Hail and well met, traveller!</h2>
+        <p>Welcome to the Yawning Portal tavern, where the ale is strong, the food is hearty, and where one such as yourself can find the most unique managerie of adventurers in all of Waterdeep (or the entire Sword Coast, for that matter!)</p>
+        <p>Whether you're looking to plunder the dungeons of Undermountain, explore the inner jungles of Chult, or even venture beyond to the Nine Hells themselves, you're sure to find one as brave and ambitious as yourself. Or one as foolish.</p>
+        <p>So take your fate in your hands and roll the dice. Let's see who will take up your call...</p>
+      </div>
+
+      <div class="button-container">
+        <button class="roll">Roll!</button>
+        <i class="fas fa-dice-d20 d20"></i>
+      </div>
+    
+    </div>
+
+    
+    <div class="characterSheet" id="characterSheet">
+      
+      <section class="abilities" id="abilities">
+        <!-- Ability scores and bonuses -->
+        <!-- Populated by app.printAbilities() -->
+      </section>
+
+      
+      <section class="skills" id="skills">
+
+        <h3>Skills</h3>
+
+        <ul id="skillsList">
+          <!-- List of skills and bonuses -->
+          <!-- Populated by player.getSkillBonuses() -->
+        </ul>
+
+      </section>
+      
+      
+      <section class="basicInfo" id="basicInfo">
+        <!-- Character name, race, class, alignment and languages -->
+        <!-- Populated by app.printBasic() -->
+      </section>
+
+
+      <section class="savingThrows" id="savingThrows">
+        
+        <h3>Saving throws</h3>
+
+        <ul id="saveList">
+          <!-- List of saving throws and bonuses -->
+          <!-- Populated by player.getSavingThrows() -->
+        </ul>
+
+      </section>
+
+
+      <section class="misc" id="misc">
+        <!-- Character AC, HP, Proficiency Bonus, Speed, Initiative Bonus, and Hit Die -->
+        <!-- Populated by app.printMisc() -->
+      </section>
+     
+    </div>
+
+      
+    <section class="rollAgain" id="rollAgain">
+      <p>Not the one you're looking for?</p>
+      <p>Roll again!</p>
+      <div class="button-container">
+        <button class="roll">Roll!</button>
+        <i class="fas fa-dice-d20 d20"></i>
+      </div>
+    </section>
+    
+    
+    <!-- Loading screen -->
+    <div class="loading invisible">
+        <i class="fas fa-dice-d20 d20 diceRoll"></i>
+    </div>
+
+  </main>
+        
+
+  <footer>
+    <p>Created at <a href="https://junocollege.com">Juno College</a></p>
+  </footer>
+
+  
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
+      
+      
+
+   
+    
